@@ -49,5 +49,10 @@ fn main() {
         println!("Hello While");
         count += 1;
     }
+
+
+    for i in 1..=5{
+        println!("{i}")
+    }
     
 }
