@@ -7,7 +7,7 @@ fn read_int() -> i32{
 }
 
 fn main() {
-    let mut name = String::new();
+    /*let mut name = String::new();
     println!("Enter your name: ");
     io::stdin()
         .read_line(&mut name)
@@ -16,8 +16,38 @@ fn main() {
 
     
 
-    println!{"Your Age: "}
+    println!{"Your Age: "};
     let age = read_int();
-    println!("Age: {age}")
+    println!("Age: {age}");
+
+    if age >= 18{
+        println!("Adult");
+    } else {
+        println!("Minor");
+    }*/
+
+    let mut count = 0;
+
+    loop{
+        println!("{count}");
+
+        count += 1;
+
+        if count == 5 {
+            break;
+        }
+    };
+
+    let result = loop{
+        println!("hello");
+        break 10;
+    };
+    println!("{result}");
+
+    let mut count = 0;
+    while count<=5{
+        println!("Hello While");
+        count += 1;
+    }
     
 }
