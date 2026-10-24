@@ -1,6 +1,7 @@
 use std::io;
+use std::collections::HashMap;
 
-fn read_int() -> i32{
+fn _read_int() -> i32{
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
     input.trim().parse().unwrap()
@@ -69,11 +70,72 @@ fn main() {
 
     //println!("{:#?}",_vec());
 
-    _strings();
-    
+    //_strings();
+
+
+    //_string_exp();
+    //_hash();
+    _struct();
 }
 
-fn calculate(a: i32, b: i32) -> i32{
+
+fn _struct(){
+    let a = _User{
+        _name: String::from("Nikki"),
+        _age: 22,
+        _role: String::from("AI Engineer")
+    };
+
+    a.introduce();
+    _try_user(&a);
+}
+
+
+
+#[derive(Debug)]
+struct _User{
+    _name: String,
+    _age: u32,
+    _role: String
+}
+
+impl _User {
+    fn introduce(&self) {
+        println!("I'm {}, age {}", self._name, self._age);
+    }
+}
+
+fn _try_user(_user: &_User){
+    println!("I'm {}, age {}", _user._name, _user._age)
+}
+
+fn _hash(){
+    let mut map = HashMap::new();
+
+    map.insert("name", "Nikki");
+    map.insert("city", "Delhi");
+    map.insert("name", "Nikki2");
+
+    println!("{:?}", map.get("name"));
+    println!("{:?}", map.keys());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fn _calculate(a: i32, b: i32) -> i32{
     a + b
 }
 
@@ -105,7 +167,7 @@ fn _array()->[i32; 5]{
 }
 
 fn _array_extract(){
-    let [a, b, c, d, e] = _array();
+    let [a, _b, _c, _d, _e] = _array();
     println!("{a}");
 }
 
@@ -119,7 +181,7 @@ fn _vec() -> Vec<i32> {
 
     println!("{:?}", numbers);
 
-    let a = numbers[2];
+    let _a = numbers[2];
     println!("{:?}", numbers);
 
     numbers
@@ -131,5 +193,32 @@ fn _strings(){
     let mut name = String::from("Nikki");
     name += " Singh";
     println!("{}", name);
+
+}
+
+fn _string_exp(){
+    let borrowed: &str = "Hello"; 
+    //"Hello" is a string literal stored in the compiled program.
+    //borrowed is a reference to that text.
+    //It doesn't own the text.
+
+
+    let owned: String = borrowed.to_string();
+    //This creates a new, owned string containing a copy of "Hello".
+
+    let slice: &str = &owned;
+    //This creates a reference to the text inside owned. It doesn't make another copy of the text.
+
+    /*
+    owned  ──────owns──────> "Hello" (heap buffer)
+                               ▲
+    slice  ──────borrows───────┘
+    */
+
+    println!("{borrowed}");
+    println!("{owned}");
+    println!("{slice}");
+
+    println!("{}", owned.len());
 
 }
