@@ -67,7 +67,7 @@ fn main() {
 
     //_array_extract();
 
-    _vec();
+    println!("{:?}",_vec());
     
 }
 
@@ -107,7 +107,7 @@ fn _array_extract(){
     println!("{a}");
 }
 
-fn _vec(){
+fn _vec() -> Vec<i32> {
     let mut numbers = vec![10, 20, 30];
 
     numbers.push(40);
@@ -116,4 +116,10 @@ fn _vec(){
     numbers.pop();
 
     println!("{:?}", numbers);
+
+    let a = numbers[2];
+    println!("{:?}", numbers);
+
+    numbers
+
 }
