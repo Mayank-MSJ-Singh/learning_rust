@@ -59,10 +59,30 @@ fn main() {
     }
     */
 
-    println!("{}", calculate(1,2));
+    //println!("{}", calculate(1,2));
+
+    //_tuple();
+
+    _tuple_extract();
     
 }
 
 fn calculate(a: i32, b: i32) -> i32{
     a + b
+}
+
+fn _tuple() -> (&'static str, i32, f64){
+    let user = ("Nikki", 22, 60.5);
+
+    println!("{}", user.0);
+    println!("{}", user.1);
+    println!("{}", user.2);
+
+    user
+}
+
+fn _tuple_extract(){
+    let (name, age, weight) = _tuple();
+
+    println!("{name}, {age}, {weight}");
 }
