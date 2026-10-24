@@ -63,7 +63,9 @@ fn main() {
 
     //_tuple();
 
-    _tuple_extract();
+    //_tuple_extract();
+
+    _array_extract();
     
 }
 
@@ -85,4 +87,20 @@ fn _tuple_extract(){
     let (name, age, weight) = _tuple();
 
     println!("{name}, {age}, {weight}");
+}
+
+fn _array()->[i32; 5]{
+    let numbers = [10, 20, 30, 40, 50];
+
+    println!("{}", numbers[0]);
+    println!("{}", numbers[2]);
+
+    println!("Length: {}", numbers.len());
+
+    numbers
+}
+
+fn _array_extract(){
+    let [a, b, c, d, e] = _array();
+    println!("{a}");
 }
