@@ -75,7 +75,23 @@ fn main() {
 
     //_string_exp();
     //_hash();
-    _struct();
+    //_struct();
+    _print_status(_Status::_Success);
+}
+
+enum _Status{
+    _Pending,
+    _Success,
+    _Failed
+}
+
+fn _print_status(status: _Status){
+    match status{
+        _Status::_Pending => println!("Pending"),
+        _Status::_Success => println!("Success"),
+        _Status::_Failed => println!("Failed")
+
+    }
 }
 
 
@@ -86,7 +102,7 @@ fn _struct(){
         _role: String::from("AI Engineer")
     };
 
-    a.introduce();
+    a._introduce();
     _try_user(&a);
 }
 
@@ -100,7 +116,7 @@ struct _User{
 }
 
 impl _User {
-    fn introduce(&self) {
+    fn _introduce(&self) {
         println!("I'm {}, age {}", self._name, self._age);
     }
 }
