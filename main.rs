@@ -67,7 +67,7 @@ fn main() {
 
     //_array_extract();
 
-    println!("{:?}",_vec());
+    println!("{:#?}",_vec());
     
 }
 
