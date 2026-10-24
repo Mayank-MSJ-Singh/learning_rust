@@ -65,7 +65,9 @@ fn main() {
 
     //_tuple_extract();
 
-    _array_extract();
+    //_array_extract();
+
+    _vec();
     
 }
 
@@ -103,4 +105,15 @@ fn _array()->[i32; 5]{
 fn _array_extract(){
     let [a, b, c, d, e] = _array();
     println!("{a}");
+}
+
+fn _vec(){
+    let mut numbers = vec![10, 20, 30];
+
+    numbers.push(40);
+    numbers.push(50);
+
+    numbers.pop();
+
+    println!("{:?}", numbers);
 }
