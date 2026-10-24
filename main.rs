@@ -67,7 +67,9 @@ fn main() {
 
     //_array_extract();
 
-    println!("{:#?}",_vec());
+    //println!("{:#?}",_vec());
+
+    _strings();
     
 }
 
@@ -121,5 +123,13 @@ fn _vec() -> Vec<i32> {
     println!("{:?}", numbers);
 
     numbers
+
+}
+
+
+fn _strings(){
+    let mut name = String::from("Nikki");
+    name += " Singh";
+    println!("{}", name);
 
 }
