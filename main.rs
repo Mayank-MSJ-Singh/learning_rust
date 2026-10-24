@@ -6,6 +6,8 @@ fn read_int() -> i32{
     input.trim().parse().unwrap()
 }
 
+
+
 fn main() {
     /*let mut name = String::new();
     println!("Enter your name: ");
@@ -26,6 +28,7 @@ fn main() {
         println!("Minor");
     }*/
 
+    /*
     let mut count = 0;
 
     loop{
@@ -54,5 +57,12 @@ fn main() {
     for i in 1..=5{
         println!("{i}")
     }
+    */
+
+    println!("{}", calculate(1,2));
     
+}
+
+fn calculate(a: i32, b: i32) -> i32{
+    a + b
 }
